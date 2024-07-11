@@ -1,14 +1,14 @@
 {
-  "name": "react-drag-drop-files",
-  "version": "2.3.10",
+  "name": "react-drag-drop-files-ro",
+  "version": "2.4.2",
   "description": "Light React Drag & Drop files and images library styled by styled-components",
   "author": "Karim <karimmokhtar28@gmail.com>",
   "license": "MIT",
   "private": false,
-  "main": "dist/react-drag-drop-files.cjs.js",
-  "module": "dist/react-drag-drop-files.esm.js",
-  "types": "dist/react-drag-drop-files.d.ts",
-  "source": "src/react-drag-drop-files.ts",
+  "main": "dist/react-drag-drop-files-ro.cjs.js",
+  "module": "dist/react-drag-drop-files-ro.esm.js",
+  "types": "dist/react-drag-drop-files-ro.d.ts",
+  "source": "src/react-drag-drop-files-ro.ts",
   "scripts": {
     "build": "rollup -c",
     "build-watch": "rollup -c -w",
@@ -41,9 +41,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/KarimMokhtar/react-drag-drop-files"
+    "url": "https://github.com/Rush-Order-Inc/react-drag-drop-files-ro"
   },
-  "homepage": "https://github.com/KarimMokhtar/react-drag-drop-files",
+  "homepage": "https://github.com/Rush-Order-Inc/react-drag-drop-files-ro",
   "contributors": [
     "Karim Mokhtar <karimmokhtar28@gmail.com>"
   ],

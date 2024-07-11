@@ -82,7 +82,7 @@ const drawDescription = (
             </>
           ) : (
             <>
-              <span>Uploaded Successfully!</span> Upload another?
+              <span>Uploaded File Successfully!</span> Upload another?
             </>
           )}
         </>
