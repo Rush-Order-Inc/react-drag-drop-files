@@ -22,6 +22,7 @@ type Props = {
   fileOrFiles?: Array<File> | File | null;
   disabled?: boolean | false;
   label?: string | undefined;
+  uploadedLabel?: string | undefined;
   multiple?: boolean | false;
   required?: boolean | false;
   onSizeError?: (arg0: string) => void;
@@ -50,7 +51,8 @@ const drawDescription = (
   uploaded: boolean,
   typeError: boolean,
   disabled: boolean | undefined,
-  label: string | undefined
+  label: string | undefined,
+  uploadedLabel: string | undefined
 ) => {
   return typeError ? (
     <span>File type/size error, Hovered on types!</span>
@@ -73,7 +75,16 @@ const drawDescription = (
         </>
       ) : (
         <>
-          <span>Uploaded Successfully!</span> Upload another?
+          {uploadedLabel ? (
+            <>
+              <span>{uploadedLabel.split(' ')[0]}</span>{' '}
+              {uploadedLabel.substr(uploadedLabel.indexOf(' ') + 1)}
+            </>
+          ) : (
+            <>
+              <span>Uploaded Successfully!</span> Upload another?
+            </>
+          )}
         </>
       )}
     </Description>
@@ -121,6 +132,7 @@ const FileUploader: React.FC<Props> = (props: Props): JSX.Element => {
     onDrop,
     disabled,
     label,
+    uploadedLabel,
     multiple,
     required,
     onDraggingStateChange,
@@ -244,7 +256,14 @@ const FileUploader: React.FC<Props> = (props: Props): JSX.Element => {
         <>
           <ImageAdd />
           <DescriptionWrapper error={error}>
-            {drawDescription(currFiles, uploaded, error, disabled, label)}
+            {drawDescription(
+              currFiles,
+              uploaded,
+              error,
+              disabled,
+              label,
+              uploadedLabel
+            )}
             <DrawTypes types={types} minSize={minSize} maxSize={maxSize} />
           </DescriptionWrapper>
         </>
